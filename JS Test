@@ -1,0 +1,39 @@
+// create a variable to hold your NFT's
+let nftCollection = [];
+
+// this function will take in some values as parameters, create an
+function mintNFT(name, artist, description, date) {
+  
+  const nft = {
+    name: name,
+    artist: artist,
+    description: description,
+    date: date
+  };
+
+  nftCollection.push(nft);
+}
+
+function listNFTs() {
+  nftCollection.forEach((nft, index) => {
+    console.log(`NFT ${index + 1}:`);
+    console.log(`Name: ${nft.name}`);
+    console.log(`Artist: ${nft.artist}`);
+    console.log(`Description: ${nft.description}`);
+    console.log(`Date: ${nft.date}`);
+    console.log(''); 
+  });
+}
+
+function getTotalSupply() {
+  return nftCollection.length;
+}
+
+
+mintNFT("Sunset", "Chirau", "A beautiful sunset over the mountains.", "2024-05-27");
+mintNFT("Ocean Waves", "Sundar", "Waves crashing on the shore during a storm.", "2024-05-28");
+mintNFT("City Lights", "Pitchai", "A bustling cityscape at night.", "2024-05-29");
+
+listNFTs();
+
+console.log(`Total Supply: ${getTotalSupply()}`);
